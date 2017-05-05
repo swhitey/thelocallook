@@ -43,8 +43,10 @@ view: inventory_items {
       quarter,
       year
     ]
-    sql: ${TABLE}.sold_at ;;
+    sql: ${TABLE}.created_at ;;
   }
+
+
 
   measure: count {
     type: count

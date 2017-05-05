@@ -18,7 +18,7 @@ view: orders {
       quarter,
       year
     ]
-    sql: ${TABLE}.created_at ;;
+   sql: ${TABLE}.created_at ;;
   }
 
   dimension: status {
