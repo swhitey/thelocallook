@@ -34,6 +34,8 @@ view: inventory_items {
 
   dimension_group: sold {
     type: time
+    view_label: "flas"
+    view_label: "floos"
     timeframes: [
       raw,
       time,
@@ -46,7 +48,12 @@ view: inventory_items {
     sql: ${TABLE}.created_at ;;
   }
 
-
+# measure: min {
+#   type: min
+#   sql:  ${count} ;;
+#
+#
+# }
 
   measure: count {
     type: count
