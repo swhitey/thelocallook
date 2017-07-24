@@ -32,6 +32,40 @@ view: inventory_items {
     sql: ${TABLE}.product_id ;;
   }
 
+
+  dimension: test_dimensino {
+    type: string
+    sql:  ${header} ;;
+    html:
+    {% if {{inventory_items.header._rendered_value}} == "Header text" %}
+    <div style= "border-style:solid; border-size:1px; background-color:#c0e2f0; color:#70310f; padding:0px,0px,0px,3px;align:center;"> Datasource(s) In Total </div>
+    {% else %}
+    {{inventory_items.header._rendered_value}}
+    {% endif %}
+    ;;
+
+  }
+
+  dimension:  header {
+    type:  string
+    sql:'Header text' ;;
+  }
+
+  dimension: test_dimensino2 {
+    type: string
+    sql:  'Datasource(s) In Total';;
+    html:
+    <div style= "border-style:solid; border-size:1px; background-color:#c0e2f0; color:#70310f; padding:0px,0px,0px,3px;align:center;"> {{value}} </div>
+
+    ;;
+
+    }
+
+
+
+
+
+
   dimension_group: sold {
     type: time
     view_label: "flas"
