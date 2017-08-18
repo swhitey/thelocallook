@@ -17,6 +17,16 @@ view: products {
     sql: ${TABLE}.category ;;
   }
 
+  measure: test_list {
+    type: list
+    list_field: brand
+  }
+
+  measure: test_yesno {
+    type: yesno
+    sql:  ${test_list} like '%Allegra K%' ;;
+  }
+
   dimension: department {
     type: string
     sql: ${TABLE}.department ;;
@@ -25,6 +35,25 @@ view: products {
   dimension: item_name {
     type: string
     sql: ${TABLE}.item_name ;;
+  }
+
+  measure: total_brand {
+    type: count_distinct
+    sql: ${brand}     ;;
+  }
+
+  measure: allegrak_count{
+    type: count
+    filters: {
+      field: brand
+      value: "Allegra K"
+    }
+  }
+
+  measure: percent {
+    type: number
+    sql: ${allegrak_count}/${total_brand} ;;
+
   }
 
   dimension: rank {
