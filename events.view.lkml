@@ -19,6 +19,24 @@ view: events {
       year
     ]
     sql: ${TABLE}.created_at ;;
+    html: {% assign nowunix = now | date: '%s' %}
+    {{nowunix}} ;;
+  }
+
+  dimension_group: current {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: current_date ;;
+    html: {% assign nowunix = {{value}} | date: '%s' %}
+      {{nowunix}} ;;
   }
 
   dimension: test{}
@@ -37,6 +55,7 @@ view: events {
   dimension: value {
     type: string
     sql: ${TABLE}.value ;;
+
   }
 
   measure: count {

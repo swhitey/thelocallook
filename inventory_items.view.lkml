@@ -69,7 +69,7 @@ view: inventory_items {
   dimension_group: sold {
     type: time
     view_label: "flas"
-    view_label: "floos"
+
     timeframes: [
       raw,
       time,
