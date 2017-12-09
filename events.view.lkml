@@ -7,6 +7,10 @@ view: events {
     sql: ${TABLE}.id ;;
   }
 ##git change
+
+
+## newer git change
+
   dimension_group: created {
     type: time
     timeframes: [
