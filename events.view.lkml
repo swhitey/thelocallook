@@ -6,7 +6,7 @@ view: events {
     type: number
     sql: ${TABLE}.id ;;
   }
-
+##git change
   dimension_group: created {
     type: time
     timeframes: [
