@@ -71,6 +71,12 @@ view: users {
     drill_fields: [detail*]
   }
 
+  measure: sum {
+    type: sum
+    drill_fields: [detail*]
+    sql: ${gender} ;;
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [

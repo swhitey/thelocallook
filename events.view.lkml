@@ -10,6 +10,7 @@ view: events {
 
 
 ## newer git change
+## cli git change
 
   dimension_group: created {
     type: time
