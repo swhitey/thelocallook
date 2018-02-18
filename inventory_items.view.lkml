@@ -26,6 +26,20 @@ view: inventory_items {
     sql: ${TABLE}.created_at ;;
   }
 
+  dimension_group: created_off {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.created_at ;;
+  }
+
   dimension: product_id {
     type: number
     # hidden: yes
@@ -62,9 +76,12 @@ view: inventory_items {
     }
 
 
+  dimension:  test_parm {
+    type: string
+    sql: {% parameter test_param %} ;;
+  }
 
-
-
+  parameter: test_param {}
 
   dimension_group: sold {
     type: time
